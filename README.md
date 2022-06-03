@@ -33,7 +33,7 @@ Here's a walkthrough of implemented user stories:
 
 <img src='./flixter.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-GIF created with [imgur].
+GIF created with [LICEcap].
 
 ## Notes
 
@@ -46,7 +46,7 @@ Figuring out layout was difficult.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2022] [Sabiha Imran]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
