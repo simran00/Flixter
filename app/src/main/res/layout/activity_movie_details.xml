@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5E7FF"
+    android:background="#000000"
     tools:context=".MovieDetailsActivity">
 
     <TextView
@@ -19,7 +19,8 @@
         android:layout_marginLeft="106dp"
         android:layout_marginTop="4dp"
         android:layout_toEndOf="@+id/ivPoster"
-        android:textAppearance="@android:style/TextAppearance.Large" />
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:textColor="#FFFFFF"/>
 
     <RatingBar
         android:id="@+id/rbVoteAverage"
@@ -41,7 +42,8 @@
         android:layout_alignParentRight="true"
         android:layout_marginLeft="110dp"
         android:layout_marginTop="5dp"
-        android:layout_marginRight="10dp" />
+        android:layout_marginRight="10dp"
+        android:textColor="#808080" />
 
     <ImageView
         android:id="@+id/ivPoster"
