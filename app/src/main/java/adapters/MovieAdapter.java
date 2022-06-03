@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.example.flixter.MovieDetailsActivity;
 import com.example.flixter.R;
 import com.example.flixter.models.Movie;
@@ -80,16 +81,15 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
             tvTitle.setText(movie.getTitle());
             tvOverview.setText(movie.getOverview());
             String imageURL;
+            int placeholderImage;
             if (context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                Glide.with(context).load(movie.getBackdropPath()).placeholder(R.drawable.flicks_backdrop_placeholder).into(ivPoster);
-                // imageURL = movie.getBackdropPath();
+                placeholderImage = R.drawable.flicks_backdrop_placeholder;
+                imageURL = movie.getBackdropPath();
             } else {
-                Glide.with(context).load(movie.getPosterPath()).placeholder(R.drawable.flicks_movie_placeholder).into(ivPoster);
+                placeholderImage = R.drawable.flicks_movie_placeholder;
                 imageURL = movie.getPosterPath();
-
-
             }
-            // Glide.with(context).load(imageURL).placeholder(R.drawable.flicks_movie_placeholder).into(ivPoster);
+            Glide.with(context).load(imageURL).placeholder(placeholderImage).into(ivPoster);
         }
     }
 }

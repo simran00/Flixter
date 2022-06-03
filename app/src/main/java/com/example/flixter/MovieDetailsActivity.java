@@ -2,8 +2,10 @@ package com.example.flixter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -17,6 +19,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
     TextView tvTitle;
     TextView tvOverview;
     RatingBar rbVoteAverage;
+    ImageView ivPoster;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,12 +29,14 @@ public class MovieDetailsActivity extends AppCompatActivity {
         tvTitle = (TextView) findViewById(R.id.tvTitle);
         tvOverview = (TextView) findViewById(R.id.tvOverview);
         rbVoteAverage = (RatingBar) findViewById(R.id.rbVoteAverage);
+        ivPoster = (ImageView) findViewById(R.id.ivPoster);
 
         movie = (Movie) Parcels.unwrap(getIntent().getParcelableExtra(Movie.class.getSimpleName()));
         Log.d("MovieDetailsActivity", String.format("Showing details for '%s'", movie.getTitle()));
 
         tvTitle.setText(movie.getTitle());
         tvOverview.setText(movie.getOverview());
+        // ivPoster.setImageDrawable(movie.getPosterPath());
 
         float voteAverage = movie.getVoteAverage().floatValue();
         rbVoteAverage.setRating(voteAverage / 2.0f);
